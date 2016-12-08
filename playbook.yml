@@ -1,8 +1,8 @@
 ---
 - name: Install hadoop master node
   hosts: hadoop-master
-  remote_user: ubuntu
-  sudo: yes
+  remote_user: cloud-user
+  become: yes
 
   roles:
     - common
@@ -11,8 +11,8 @@
 
 - name: Install hadoop data nodes
   hosts: hadoop-data
-  remote_user: ubuntu
-  sudo: yes
+  remote_user: cloud-user
+  become: yes
 
   roles:
     - common
